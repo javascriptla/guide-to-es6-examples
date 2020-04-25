@@ -79,6 +79,12 @@ Q.randomNum(10) //any number 1-10
 </html>
 ```
 
+Believe it or not, this was the old way of writing a library and sharing it with others; you'd write your own JavaScript file containing your library, then make separate scripts for plugins, then finally add them altogether into script files on an HTML page.   As you can see this led to a huge issue with variables often breaking because other variables were using the same name!
+
+Another issue, as you might have seen is that our successive modules don’t necessarily have access to any private variables (variables defined inside IIFEs) that were defined in other versions of Q, so we might have to recreate them again.
+
+Loading all these scripts one by one causes great room for error. Imagine if we had dozens of scripts to load in manually? What if we made an error, or forgot the file? Hence, this way of writing JavaScript modules isn’t great for modern web development (it’s too slow, ugly, manual, tedious and at risk of code conflict).
+
 ## Enter Module Dependency Management (Exploring AMD & CommonJS syntax)
 
 ### AMD (Asynchronous Module Development)
